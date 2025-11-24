@@ -84,17 +84,16 @@ WSGI_APPLICATION = 'rh_django.wsgi.application'
 # --- MySQL (PyMySQL) ---
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.mysql',  # Igual para MariaDB
         'NAME': 'recursos_humanos_db',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': '',  # vacío por defecto en XAMPP
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'OPTIONS': {
             'charset': 'utf8mb4',
-            'init_command': "SET sql_mode='STRICT_ALL_TABLES'",
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         },
-        'CONN_MAX_AGE': 60,  # Conexiones persistentes (dev)
     }
 }
 
